@@ -2,6 +2,8 @@ import pandas as pd
 import geopandas as gpd
 import numpy as np
 import requests
+import plotly.express as px
+import plotly.graph_objects as go
 import os
 import json
 
@@ -26,9 +28,10 @@ for vpu in vpus:
     else:
         print('Path already exists')
         gdf = gpd.read_file(file_path)
-        with open(file_path, "a+") as f:
-            f.seek(0)
-            contents = f.read()
-            if vpu not in contents:
-                obj = {'vpu': gdf[stream_order_col].tolist()}
-                f.write(json.dumps(obj))
+    print(gdf.columns)
+    # with open(file_path, "a+") as f:
+    #     f.seek(0)
+    #     contents = f.read()
+    #     if vpu not in contents:
+    #         obj = {'vpu': gdf[stream_order_col].tolist()}
+    #         f.write(json.dumps(obj))
