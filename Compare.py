@@ -99,7 +99,7 @@ for obj in nga_order_obj:
     nga_stream_orders = np.append(nga_stream_orders, obj[list(obj.keys())[0]])
 
 unique, counts = np.unique(stream_orders, return_counts=True)
-Proportions = counts/len(stream_orders)
+proportions = counts/len(stream_orders)
 # Create histograms
 fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2)
 ax1.hist(stream_orders, bins=len(unique) - 1, density=True, cumulative=False)
